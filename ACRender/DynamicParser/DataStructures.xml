@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Structures xmlns="http://tempuri.org/DataStructures.xsd">
+  <TypeDef Name="Vertex">
+    <Field Name="VertexIndex" Type="uint16" />
+    <Field Name="UVLength" Type="uint16" />
+    <NamedType TypeName="XYZ" DisplayName="Position"/>
+    <NamedType TypeName="XYZ" DisplayName="NormalVector"/>
+    <Vector Name="UVData" Length="UVLength">
+      <NamedType TypeName="UV" DisplayName="UV"/>
+    </Vector>
+  </TypeDef>
+  <TypeDef Name="UV">
+    <Field Name="U" Type="single" />
+    <Field Name="V" Type="single" />
+  </TypeDef>
+  <TypeDef Name="XYZ">
+    <Field Name="X" Type="single" />
+    <Field Name="Y" Type="single" />
+    <Field Name="Z" Type="single" />
+  </TypeDef>
+  <DataFileDef Name="Simple Meshes" matchmask="01000000">
+    <Field Name="FileID" Type="uint32"/>
+    <Field Name="Flags" Type="uint32"/>
+    <Field Name="TextureCount" Type="uint32"/>
+    <Vector Name="TextureInfo" Length="TextureCount">
+      <Field Name="TextureId" Type="uint32"/>
+    </Vector>
+    <Field Name="Unknown1" Type="uint32"/>
+    <Field Name="VertexCount" Type="uint32"/>
+    <Vector Name="VertexInfo" Length="VertexCount">
+      <NamedType TypeName="Vertex" DisplayName="Vertex"/>
+    </Vector>
+  </DataFileDef>
+</Structures>

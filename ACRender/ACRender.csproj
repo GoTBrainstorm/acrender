@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91BB2AF7-30C4-46BE-B6F7-0B62AF565EFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gawa.ACRender</RootNamespace>
+    <AssemblyName>ACRender</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2910.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACPalette.cs" />
+    <Compile Include="ACTexture.cs" />
+    <Compile Include="Axis.cs" />
+    <Compile Include="BP.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="ComplexMesh.cs" />
+    <Compile Include="ComplexMeshSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplexMeshSelection.Designer.cs">
+      <DependentUpon>ComplexMeshSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="DatReader.cs" />
+    <Compile Include="DatType.cs" />
+    <Compile Include="Dungeon.cs" />
+    <Compile Include="DungeonBlock.cs" />
+    <Compile Include="DungeonBlockSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DungeonBlockSelection.Designer.cs">
+      <DependentUpon>DungeonBlockSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DungeonProvider.cs" />
+    <Compile Include="DynamicParser\CachedFileList.cs">
+      <DependentUpon>CachedFileList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicParser\DataStructures.cs">
+      <DependentUpon>DataStructures.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicParser\DynamicFileParser.cs" />
+    <Compile Include="DynamicParser\FileDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicParser\FileDisplay.Designer.cs">
+      <DependentUpon>FileDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicParser\FileGraph.cs" />
+    <Compile Include="DynamicParser\FileList.cs" />
+    <Compile Include="DynamicParser\FileListType.cs" />
+    <Compile Include="DynamicParser\FileMapDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DynamicParser\FileMapDisplay.Designer.cs">
+      <DependentUpon>FileMapDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicParser\IParserOutput.cs" />
+    <Compile Include="DynamicParser\Mapping.cs" />
+    <Compile Include="DynamicParser\NodeType.cs" />
+    <Compile Include="DynamicParser\ObjectFromXMLDeserializer.cs" />
+    <Compile Include="DynamicParser\ObjectToXMLSerializer.cs" />
+    <Compile Include="DynamicParser\XmlDeserializationResult.cs" />
+    <Compile Include="DynamicParser\XSDLoader.cs" />
+    <Compile Include="EmbeddedFile.cs" />
+    <Compile Include="EmbeddedFileEntry.cs" />
+    <Compile Include="FileExporter.cs" />
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRenderable.cs" />
+    <Compile Include="MeshDecoration.cs" />
+    <Compile Include="MeshParser.cs" />
+    <Compile Include="MeshProvider.cs" />
+    <Compile Include="MeshScene.cs" />
+    <Compile Include="PaletteLoader.cs" />
+    <Compile Include="PortalTreeView\PortalTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortalTreeView\PortalTreeView.Designer.cs">
+      <DependentUpon>PortalTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ComplexMeshSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComplexMeshSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DungeonBlockSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DungeonBlockSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicParser\FileDisplay.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicParser\FileMapDisplay.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileMapDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortalTreeView\PortalTreeView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PortalTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleMeshSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SimpleMeshSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TexturePreview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TexturePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsageList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UsageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="DynamicParser\DataStructures.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="DynamicParser\DataStructures.xsx">
+      <DependentUpon>DataStructures.xsd</DependentUpon>
+    </None>
+    <EmbeddedResource Include="DynamicParser\CachedFileList.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="DynamicParser\CachedFileList.xsx">
+      <DependentUpon>CachedFileList.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RenderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenderForm.Designer.cs">
+      <DependentUpon>RenderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SimpleMesh.cs" />
+    <Compile Include="SimpleMeshScene.cs" />
+    <Compile Include="SimpleMeshSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleMeshSelection.Designer.cs">
+      <DependentUpon>SimpleMeshSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextureLoader.cs" />
+    <Compile Include="TexturePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TexturePreview.Designer.cs">
+      <DependentUpon>TexturePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeOutput.cs" />
+    <Compile Include="UsageList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsageList.Designer.cs">
+      <DependentUpon>UsageList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DynamicParser\DataStructures.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

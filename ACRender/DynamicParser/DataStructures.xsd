@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataStructures" targetNamespace="http://tempuri.org/DataStructures.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/DataStructures.xsd" xmlns:mstns="http://tempuri.org/DataStructures.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Structures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TypeDef" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="DataFileDef" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TypeDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="Field" />
+          <xs:element ref="Align" />
+          <xs:element ref="NamedType" />
+          <xs:element ref="Vector" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Field">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="Type" type="FieldType" use="required">
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Align">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="boundary" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="FieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="uint32" />
+      <xs:enumeration value="uint16" />
+      <xs:enumeration value="byte" />
+      <xs:enumeration value="single" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Vector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="Field" />
+          <xs:element ref="Align" />
+          <xs:element ref="NamedType" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="Length" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataFileDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="Field" />
+          <xs:element ref="Align" />
+          <xs:element ref="NamedType" />
+          <xs:element ref="Vector" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="matchmask" type="xs:unsignedInt" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NamedType">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="TypeName" type="xs:string" use="required" />
+      <xs:attribute name="DisplayName" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
